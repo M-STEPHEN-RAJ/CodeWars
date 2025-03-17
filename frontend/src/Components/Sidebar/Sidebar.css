@@ -1,0 +1,113 @@
+/* Sidebar Container */
+.sidebar {
+    width: 26.5%;
+    background: black;
+    padding: 20px;
+    border-left: 2px solid #ae23c1cc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 47px;
+}
+
+.side-title {
+    padding: 20px;
+}
+
+/* Question List */
+.question-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+/* Individual Question Box */
+.question {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Status Colors - Fixing Incorrect Class Names */
+.color-details-1 {
+    background-color: #ae23c1cc;
+}
+.color-details-2 {
+    background-color: #f3c3facc;
+}
+.color-details-3 {
+    background-color: #fff;
+}
+
+.color-details-1,.color-details-2,.color-details-3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+/* Mention Query Details */
+.mention-query-details {
+    width: 100%;
+    height: 45px;
+    border: 2px solid #ae23c1cc;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Completed, Review, Unattempted Sections */
+.Completed, .Review, .Unattempted {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 37%;
+    background: black;
+    gap: 5px;
+}
+
+.completed {
+    background-color: #ae23c1cc;
+}
+.review {
+    background-color: #e59df0;
+}
+.unattempted {
+    background-color: #fff;
+    color: #ae23c1cc;
+}
+
+/* Text Details */
+.text-details {
+    font-size: 14px;
+}
+
+/* Submit Button */
+.submit-btn {
+    margin-top: auto;
+    margin-bottom: 45px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ae23c1cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    background-color: #9b078e;
+}

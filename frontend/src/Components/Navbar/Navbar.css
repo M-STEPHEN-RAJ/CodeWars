@@ -1,0 +1,29 @@
+:root {
+    --nav-bg-clr-- : #ae23c1cc;
+    --nav-txt-clr-- : white;
+    --nav-gold-clr-- : gold;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-bg-clr--);
+    color: var(--nav-txt-clr--);
+    padding: 10px 20px;
+    font-size: 18px;
+    height: 50px;
+}
+
+.team-name {
+    font-family: 'Poppins', sans-serif;
+    color: var(--nav-gold-clr--);
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+.timer {
+    font-size: 17px;
+    font-weight: bold;
+    margin-right: 17px;
+}

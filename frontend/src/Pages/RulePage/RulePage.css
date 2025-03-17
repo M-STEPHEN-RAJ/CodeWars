@@ -1,0 +1,98 @@
+.rule-main-container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../../assets/codewar-bg.jpg') no-repeat center center/cover;
+    margin: 0;
+    color: white;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.rule-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    width: 65%;
+    height: 93%;
+    padding: 20px;
+    border-radius:  5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    animation: slideUp 1s ease-in-out;
+    text-align: center;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+h1 {
+    color: gold;
+    font-size: 36px;
+}
+
+.title-cursive {
+    font-family: cursive;
+    color: whitesmoke;
+}
+
+.details, .rules {
+    margin-top: 10px;
+    width: 80%;
+    text-align: left;
+    font-size: 18px;
+}
+
+.details h3, .rules h3 {
+    margin-bottom: 30px;
+}
+
+.details p, .rules p{
+    margin: 15px 10px 10px 20px;
+    font-size: 17px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: white;
+}
+
+.cta {
+    display: inline-block;
+    background-color: #ae23c1cc;
+    color: white;
+    text-decoration: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    cursor: pointer;
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 4px 8px 0 rgba(12, 3, 0, 0.5);
+    transform: translate(0, -5px);
+}
+
+.cta:hover {
+    background-color: #5f1358;
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px 0 rgba(12, 3, 0, 0.5);
+}
