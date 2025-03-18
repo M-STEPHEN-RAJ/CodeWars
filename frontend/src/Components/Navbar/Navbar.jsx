@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Navbar.css";
+import { QuestionContext } from "../../Context/QuestionContext";
+
 
 const Navbar = () => {
+    const { teamName } = useContext(QuestionContext);
   const [timeLeft, setTimeLeft] = useState(getTimeUntilTarget());
 
   useEffect(() => {
@@ -37,7 +40,7 @@ const Navbar = () => {
   return (
     <div>
       <nav className="navbar">
-        <div className="team-name">CodeRushers</div>
+        <div className="team-name">{teamName}</div>
         <div className="timer">
           {timeLeft > 0 ? <span>Time Left &nbsp; {formatTime(timeLeft)}</span> : <span>Time Over !&nbsp;&nbsp;</span>}
         </div>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./RulePage.css";
 
 const RulePage = () => {
+
   const eventInfo = [
     "Participants can choose their own desired question to solve first.",
     "Duration Time: 1 hr",

@@ -73,6 +73,8 @@
     justify-content: center;
     width: 30%;
     transform: translate(170px, 0);
+    background: transparent; 
+    border: none;
 }
 
 .signin-cta {
@@ -82,7 +84,7 @@
     background: #571177;
     color: white;
     padding: 0.75rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;

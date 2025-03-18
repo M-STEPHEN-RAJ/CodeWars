@@ -14,11 +14,13 @@ const questionSchema = new mongoose.Schema({
     java: { type: String, required: true },
     python: { type: String, required: true }
   }, // Predefined code for multiple languages
-  expectedOutput: { type: String, required: true },
-  testCases: [{
-    input: { type: String, required: true }, // Input for test case
-    expectedOutput: { type: String, required: true } // Expected Output
-  }], status: { 
+  testCases: [
+    {
+      input: { type: String, required: true }, // Input for test case
+      expectedOutput: { type: String, required: true } // Expected Output
+    }
+  ],
+  status: { 
     type: String, 
     enum: ["Unattempted", "Completed", "Review"], 
     default: "Unattempted" 

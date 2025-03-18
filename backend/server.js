@@ -8,7 +8,9 @@ app.use(express.json());
 app.use(cors({ origin: "http://localhost:5174", credentials: true }));
 
 const questionRoutes = require("./routes/questionRoutes");
+const authRoutes = require("./routes/authRoutes");
 app.use("/questions", questionRoutes);
+app.use("/auth", authRoutes);
 
 const connectDB = async () => {
     try {

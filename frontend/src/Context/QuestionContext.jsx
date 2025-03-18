@@ -6,6 +6,7 @@ export const QuestionContext = createContext();
 export const QuestionProvider = ({ children }) => {
     const [questions, setQuestions] = useState([]);
     const [selectedQuestion, setSelectedQuestion] = useState(null);
+    const [teamName, setTeamName] = useState("");  // Added teamName state
 
     useEffect(() => {
         const loadQuestions = async () => {
@@ -42,7 +43,14 @@ export const QuestionProvider = ({ children }) => {
     };
 
     return (
-        <QuestionContext.Provider value={{ questions, selectedQuestion, setSelectedQuestion: selectQuestion, updateQuestionStatus }}>
+        <QuestionContext.Provider value={{ 
+            questions, 
+            selectedQuestion, 
+            setSelectedQuestion: selectQuestion, 
+            updateQuestionStatus, 
+            teamName, // Sharing teamName
+            setTeamName // Function to update teamName
+        }}>
             {children}
         </QuestionContext.Provider>
     );
