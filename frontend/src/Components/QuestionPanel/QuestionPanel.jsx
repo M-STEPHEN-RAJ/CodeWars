@@ -69,7 +69,7 @@ const QuestionPanel = ({ setOutput }) => {
           body: JSON.stringify({
             language,
             version: "*",
-            files: [{ content: predefinedCode + userCode }],
+            files: [{ content: userCode }],
             stdin: testCase.input,
           }),
         });
