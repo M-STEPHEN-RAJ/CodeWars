@@ -27,8 +27,6 @@ const QuestionPanel = ({ setOutput }) => {
     if (selectedQuestion) {
       const predefined = selectedQuestion.predefinedCode[language] || "";
       setPredefinedCode(predefined);
-
-      // Load only user-written code (predefined code is already handled separately)
       const savedCode = localStorage.getItem(`savedCode_${selectedQuestion._id}_${language}`) || "";
       setUserCode(savedCode || ""); 
     }
@@ -123,8 +121,7 @@ const QuestionPanel = ({ setOutput }) => {
         <p onClick={handleReset}>&#8634;&nbsp;Reset</p>
       </div>
 
-      
-
+      {/* 🚀 Monaco Editor with copy-paste disabled */}
       <MonacoEditor
         height="380px"
         width="100%"
@@ -139,6 +136,25 @@ const QuestionPanel = ({ setOutput }) => {
           wordWrap: "on",
           readOnly: false,
           lineNumbers: "on",
+          contextmenu: false, // Disable right-click menu
+        }}
+        onMount={(editor) => {
+          // Disable CTRL+C, CTRL+V, CTRL+X
+          editor.onKeyDown((e) => {
+            if (
+              (e.ctrlKey || e.metaKey) &&
+              (e.code === "KeyC" || e.code === "KeyV" || e.code === "KeyX")
+            ) {
+              e.preventDefault();
+              e.stopPropagation();
+              alert("Copy-Paste is disabled for this challenge!");
+            }
+          });
+
+          // Optional: Block mouse right-click copy/paste
+          editor.getDomNode().addEventListener("copy", (e) => e.preventDefault());
+          editor.getDomNode().addEventListener("paste", (e) => e.preventDefault());
+          editor.getDomNode().addEventListener("cut", (e) => e.preventDefault());
         }}
       />
 

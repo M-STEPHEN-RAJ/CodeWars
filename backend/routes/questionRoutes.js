@@ -98,4 +98,43 @@ router.delete("/delete/:id", async (req, res) => {
     }
 });
 
+// BULK ADD Questions
+router.post("/bulkAdd", async (req, res) => {
+    try {
+      const questionsData = req.body; // Expecting an array of question objects
+      if (!Array.isArray(questionsData) || questionsData.length === 0) {
+        return res.status(400).json({ error: "No questions provided for bulk add." });
+      }
+  
+      // Map through the incoming data to calculate points for each question
+      const formattedQuestions = questionsData.map((q) => ({
+        title: q.title,
+        description: q.description,
+        difficulty: q.difficulty,
+        points: getPoints(q.difficulty),
+        predefinedCode: q.predefinedCode,
+        testCases: q.testCases,
+        status: q.status || "Unattempted"
+      }));
+  
+      await Question.insertMany(formattedQuestions);
+      res.status(201).json({ message: `${formattedQuestions.length} Questions added successfully.` });
+    } catch (error) {
+      console.error("Error during bulk add:", error);
+      res.status(500).json({ error: "Error adding questions in bulk." });
+    }
+  });
+
+  router.delete("/deleteAll", async (req, res) => {
+    try {
+      await Question.deleteMany({});
+      res.json({ message: "All questions deleted successfully" });
+    } catch (error) {
+      console.error("Error deleting all questions:", error);
+      res.status(500).json({ error: "Error deleting all questions" });
+    }
+  });
+  
+  
+
 module.exports = router;
